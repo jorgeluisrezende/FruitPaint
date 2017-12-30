@@ -18,7 +18,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    height: 2.5em;
+    height: 1.5em;
     bottom: 0;
   }
 </style>

@@ -16,7 +16,7 @@
       margin: 0;
       background: /*#172a3a*/ #101f28;
       display: inline-block;
-      width: 5em;
+      width: 4em;
       position: fixed;
       height: 100%;
   }

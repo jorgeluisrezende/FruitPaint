@@ -1,23 +1,85 @@
 <template>
   <div id="view-port">
-      <canvas></canvas>
+ <multipane class="custom-resizer" layout="vertical">
+  <div class="pane">
+    <div>
+      <h6 class="title is-6">Pane 1</h6>
+    </div>
+  </div>
+  <multipane-resizer></multipane-resizer>
+  <div class="pane">
+    <div>
+      <h6 class="title is-6">Pane 2</h6>
+    </div>
+  </div>
+  <multipane-resizer></multipane-resizer>
+  <div class="pane" :style="{ flexGrow: 1 }">
+    <div>
+      <h6 class="title is-6">Pane 3</h6>
+    </div>
+  </div>
+</multipane>
   </div>
 </template>
 
 <script>
- export default {
-   name: 'view-port',
- };
+import { Multipane, MultipaneResizer } from 'vue-multipane';
+
+// const { ipcRenderer } = window.require('electron');
+
+export default {
+  name: 'view-port',
+  components: {
+    Multipane,
+    MultipaneResizer,
+  },
+};
+
 </script>
 
-<style>
+<style lang="scss">
   #view-port{
     background: #2c3e50;
     display: inline-block;
-    width: 75%;
+    width: 100%;
     overflow: auto;
     position: fixed;
     height: 100%;
-    left: 5em;
+    left: 4em;
   }
+.custom-resizer {
+  width: 100%;
+  height: 400px;
+}
+.custom-resizer > .pane {
+  text-align: left;
+  padding: 15px;
+  overflow: hidden;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+.custom-resizer > .pane ~ .pane {
+}
+.custom-resizer > .multipane-resizer {
+  margin: 0; left: 0;
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 3px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -1.5px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  &:hover {
+    &:before {
+      border-color: #999;
+    }
+  }
+}
 </style>

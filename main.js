@@ -2,6 +2,7 @@ const {app, BrowserWindow, Menu} = require('electron');
 const menuTemplate = require('./modules/Menu/ApplicationMenu');
 const path = require('path');
 const url = require('url');
+const {ipcMain} = require('electron')
 
 let win;
 
@@ -18,7 +19,7 @@ function createWindow(){
     //     pathname: path.join(__dirname, 'index.html'),
     //     protocol: 'file:',
     //     slashes: true
-    //   }))
+    // }))
 }
 Menu.setApplicationMenu(menuTemplate);
 app.on('ready', createWindow);

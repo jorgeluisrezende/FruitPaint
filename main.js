@@ -22,4 +22,6 @@ function createWindow(){
     // }))
 }
 Menu.setApplicationMenu(menuTemplate);
-app.on('ready', createWindow);
+app.on('ready', ()=>{
+    setTimeout(createWindow, 3000);
+});

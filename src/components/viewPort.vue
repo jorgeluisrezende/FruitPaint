@@ -1,24 +1,14 @@
 <template>
   <div id="view-port">
- <multipane class="custom-resizer" layout="vertical">
-  <div class="pane">
-    <div>
-      <h6 class="title is-6">Pane 1</h6>
-    </div>
-  </div>
-  <multipane-resizer></multipane-resizer>
-  <div class="pane">
-    <div>
-      <h6 class="title is-6">Pane 2</h6>
-    </div>
-  </div>
-  <multipane-resizer></multipane-resizer>
-  <div class="pane" :style="{ flexGrow: 1 }">
-    <div>
-      <h6 class="title is-6">Pane 3</h6>
-    </div>
-  </div>
-</multipane>
+    <multipane class="vertical-panes" layout="vertical">
+      <div class="pane" :style="{ width: '70%', maxWidth: '70%' }">
+        
+      </div>
+      <multipane-resizer></multipane-resizer>
+      <div class="pane" :style="{ flexGrow: 1 }">
+        
+      </div>
+    </multipane>
   </div>
 </template>
 
@@ -39,7 +29,6 @@ export default {
 
 <style lang="scss">
   #view-port{
-    background: #2c3e50;
     display: inline-block;
     width: 100%;
     overflow: auto;
@@ -47,39 +36,31 @@ export default {
     height: 100%;
     left: 4em;
   }
-.custom-resizer {
+.vertical-panes {
   width: 100%;
-  height: 400px;
+  height: 100%;
+  // border: 1px solid #ccc;
 }
-.custom-resizer > .pane {
+.vertical-panes > .pane {
   text-align: left;
   padding: 15px;
   overflow: hidden;
-  background: #eee;
-  border: 1px solid #ccc;
+  background: #172a3a;
 }
-.custom-resizer > .pane ~ .pane {
-}
-.custom-resizer > .multipane-resizer {
+.vertical-panes > .multipane-resizer {
   margin: 0; left: 0;
   position: relative;
   &:before {
     display: block;
     content: "";
-    width: 3px;
-    height: 40px;
+    width: 2px;
+    height: 50px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 30%;
     margin-top: -20px;
-    margin-left: -1.5px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-  }
-  &:hover {
-    &:before {
-      border-color: #999;
-    }
+    border-left: 1px solid #294F66;
+    border-right: 1px solid #294F66;
   }
 }
 </style>

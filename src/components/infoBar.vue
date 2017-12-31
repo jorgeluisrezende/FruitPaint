@@ -20,5 +20,7 @@
     position: absolute;
     height: 1.5em;
     bottom: 0;
+    -webkit-user-select:none;
+    user-select: none;
   }
 </style>

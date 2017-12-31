@@ -1,7 +1,13 @@
+const functions = require('./functions');
 
 const fileMenuItens = [
   {
     label: 'New',
+    role: 'new',
+    click: () => {
+      functions.new();
+    },
+    accelerator: 'CmdOrCtrl+N',
   },
   {
     label: 'Open...',

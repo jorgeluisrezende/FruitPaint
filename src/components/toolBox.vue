@@ -1,6 +1,6 @@
 <template>
-  <div id="tool-box">
-    teste
+  <div id="tool-box" class="unselectable">
+    
   </div>
 </template>
 

@@ -28,6 +28,13 @@ const fileMenuItens = [
     type: 'separator',
   },
   {
+    label: 'reload',
+    click: () => {
+      functions.reload();
+    },
+    accelerator: 'CmdOrCtrl+R',
+  },
+  {
     label: 'Quit',
     role: 'quit',
   },

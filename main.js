@@ -13,7 +13,9 @@ function createWindow(){
     win.on('closed', () => {
         win = null;
     });
+
     win.loadURL('http://localhost:8080');
+  
     win.webContents.openDevTools()
     // win.loadURL(url.format({
     //     pathname: path.join(__dirname, 'index.html'),
@@ -23,5 +25,5 @@ function createWindow(){
 }
 Menu.setApplicationMenu(menuTemplate);
 app.on('ready', ()=>{
-    setTimeout(createWindow, 3000);
+    setTimeout(createWindow, 5000);
 });

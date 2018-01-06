@@ -1,7 +1,11 @@
-const ipcMain = require('electron');
+const window = require('electron').BrowserWindow;
 
 module.exports.new = function () {
-  ipcMain.on('newCanvas', (event) => {
-    event.sender.send('newCanvas', );
-  });
+  const focusedWindow = window.getFocusedWindow();
+  focusedWindow.webContents.send('asynchronous-reply', true);
+};
+
+module.exports.reload = function () {
+  const win = window.getFocusedWindow();
+  win.loadURL('http://localhost:8080');
 };

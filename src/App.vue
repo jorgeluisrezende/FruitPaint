@@ -17,6 +17,14 @@ import ViewPort from './components/viewPort';
 import PropertyBar from './components/propertyBar';
 import InfoBar from './components/infoBar';
 
+const ipcRenderer = window.require('electron').ipcRenderer;
+let teste = false;
+
+ipcRenderer.on('asynchronous-reply', () => {
+  teste = true;
+  
+});
+
 export default {
   name: 'app',
   components: {
@@ -27,8 +35,8 @@ export default {
   },
   data() {
     return {
-      show: true,
-    }
+      show: teste,
+    };
   },
 };
 </script>

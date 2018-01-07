@@ -4,9 +4,7 @@
     <tool-box></tool-box>
     <view-port></view-port>
     <info-bar></info-bar>
-    <vodal :show="show" animation="door" @hide="show = false" :mask="true" :closeOnEsc="true" :closeOnClickMask="false">
-      <div></div>
-    </vodal>
+    <new-file-dialog></new-file-dialog>
   </div>
 </template>
 
@@ -16,14 +14,7 @@ import ToolBox from './components/toolBox';
 import ViewPort from './components/viewPort';
 import PropertyBar from './components/propertyBar';
 import InfoBar from './components/infoBar';
-
-const ipcRenderer = window.require('electron').ipcRenderer;
-let teste = false;
-
-ipcRenderer.on('asynchronous-reply', () => {
-  teste = true;
-  
-});
+import NewFileDialog from './components/dialogs/newFileDialog';
 
 export default {
   name: 'app',
@@ -32,11 +23,7 @@ export default {
     ViewPort,
     PropertyBar,
     InfoBar,
-  },
-  data() {
-    return {
-      show: teste,
-    };
+    NewFileDialog,
   },
 };
 </script>
@@ -56,7 +43,11 @@ export default {
     height: 100%;
   }
   .unselectable{
-     -webkit-user-select:none;
-      user-select: none;
+    -webkit-user-select:none;
+    user-select: none;
   }
+  * {
+    outline: none; 
+    font-family: sans-serif;
+  } 
 </style>

@@ -1,5 +1,5 @@
 const {app, BrowserWindow, Menu} = require('electron');
-const menuTemplate = require('./modules/Menu/ApplicationMenu');
+const menuBuild = require('./modules/Menu/ApplicationMenu');
 const path = require('path');
 const url = require('url');
 const {ipcMain} = require('electron')
@@ -23,7 +23,7 @@ function createWindow(){
     //     slashes: true
     // }))
 }
-Menu.setApplicationMenu(menuTemplate);
+Menu.setApplicationMenu(menuBuild);
 app.on('ready', ()=>{
-    setTimeout(createWindow, 5000);
+    setTimeout(createWindow, 3000);
 });

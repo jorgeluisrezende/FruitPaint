@@ -36,6 +36,8 @@
   </vodal>
 </template>
 <script>
+import CanvasFabric from '../canvas/canvas-fabric';
+
 const ipcRenderer = window.require('electron').ipcRenderer;
 
 ipcRenderer.on('newFile', () => {
@@ -44,6 +46,9 @@ ipcRenderer.on('newFile', () => {
 
 export default {
   name: 'new-file-dialog',
+  components: {
+    CanvasFabric,
+  },
   data() {
     return {
       show: false,

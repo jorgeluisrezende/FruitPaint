@@ -2,7 +2,7 @@
   <div id="view-port">
     <multipane class="vertical-panes" layout="vertical">
       <div class="pane" :style="{ width: '70%', maxWidth: '70%' }">
-        
+        <canvas-fabric></canvas-fabric>
       </div>
       <multipane-resizer></multipane-resizer>
       <div class="pane" :style="{ flexGrow: 1 }">
@@ -14,14 +14,14 @@
 
 <script>
 import { Multipane, MultipaneResizer } from 'vue-multipane';
-
-// const { ipcRenderer } = window.require('electron');
+import CanvasFabric from './canvas/canvas-fabric';
 
 export default {
   name: 'view-port',
   components: {
     Multipane,
     MultipaneResizer,
+    CanvasFabric,
   },
 };
 
@@ -38,6 +38,7 @@ export default {
   }
 .vertical-panes {
   width: 100%;
+  overflow: auto;
   height: 100%;
   // border: 1px solid #ccc;
 }

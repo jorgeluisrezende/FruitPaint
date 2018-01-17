@@ -5,25 +5,29 @@
 
 export default {
   name: 'canvas-fabric',
+  data() {
+    return {
+      width: 0,
+      height: 0,
+    };
+  },
   mounted() {
     window.vm = this;
+    if (window.vm.$data.width <= 0 && !window.vm.$data.width <= 0) {
+      return;
+    }
     const fabric = window.fabric;
 
     const canvas = new fabric.Canvas('canvas', {
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
     });
-    canvas.setHeight(500);
-    canvas.setWidth(800); 
-    const rect = new fabric.Rect({
-      left: 100,
-      top: 100,
-      fill: 'red',
-      width: 20,
-      height: 20
-    });
-    canvas.add(rect);
+    canvas.setHeight(window.vm.$data.height);
+    canvas.setWidth(window.vm.$data.width);
   },
 };
 </script>
 <style>
+.upper-canvas{
+   left: 1em !important;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="view-port">
     <multipane class="vertical-panes" layout="vertical">
-      <div class="pane" :style="{ width: '70%', maxWidth: '70%' }">
+      <div class="pane" :style="{ width: '75%', maxWidth: '85%' }">
         <canvas-fabric></canvas-fabric>
       </div>
       <multipane-resizer></multipane-resizer>
@@ -33,20 +33,19 @@ export default {
     width: 100%;
     overflow: auto;
     position: fixed;
-    height: 100%;
+    height: 90%;
     left: 4em;
   }
 .vertical-panes {
   width: 100%;
-  overflow: auto;
   height: 100%;
-  // border: 1px solid #ccc;
 }
 .vertical-panes > .pane {
   text-align: left;
   padding: 15px;
   overflow: hidden;
   background: #172a3a;
+  overflow: auto;
 }
 .vertical-panes > .multipane-resizer {
   margin: 0; left: 0;

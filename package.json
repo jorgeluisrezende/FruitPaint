@@ -16,7 +16,7 @@
   "dependencies": {
     "@hscmap/vue-window": "^1.5.0",
     "install": "^0.10.2",
-    "npm": "^5.6.0",
+    "npm": "^6.14.6",
     "vodal": "^2.3.3",
     "vue": "^2.5.2",
     "vue-multipane": "^0.9.5"
